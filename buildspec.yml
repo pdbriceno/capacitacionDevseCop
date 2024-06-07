@@ -12,13 +12,13 @@ phases:
       #- wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/junit.tpl
       #- wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
       #- cd ..
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 800103408648.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 488756370474.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       #- fecha=$(date -u +"%Y-%m-%d-%H-%M-UTC")
       #- echo $fecha
       
   build:
     commands:
-      - docker build -t 800103408648.dkr.ecr.us-east-1.amazonaws.com/hello-docker-image:latest .
-      #- trivy image --quiet --severity HIGH,CRITICAL --format template --template "@trivy_templates/html.tpl" -o $fecha.html 800103408648.dkr.ecr.us-east-1.amazonaws.com/hello-docker-image:latest
+      - docker build -t 488756370474.dkr.ecr.us-east-1.amazonaws.com/hello-docker-image:latest .
+      #- trivy image --quiet --severity HIGH,CRITICAL --format template --template "@trivy_templates/html.tpl" -o $fecha.html 488756370474.dkr.ecr.us-east-1.amazonaws.com/hello-docker-image:latest
       #- aws s3 cp $fecha.html s3://trivy-vulnerabilities-reports   
-      - docker push 800103408648.dkr.ecr.us-east-1.amazonaws.com/hello-docker-image:latest
+      - docker push 488756370474.dkr.ecr.us-east-1.amazonaws.com/hello-docker-image:latest
